@@ -45,12 +45,12 @@ public class doctorRepositorio {
         List<Doctor> lista = new ArrayList<>();
         try(Connection c = conexionBD.obtenerConexion();
                     PreparedStatement ps = c.prepareStatement(
-                        "SELECT id, nombre,edad,documento, especialidad FROM pacientes ORDER BY id");
+                        "SELECT id, nombre,edad,documento, especialidad FROM doctores ORDER BY id");
                     ResultSet rs = ps.executeQuery()){
                             //avance fila por fila 
                             while (rs.next()){
                                 lista.add(new Doctor(rs.getInt("id"), rs.getString("nombre"),
-                                    rs.getInt("edad"), rs.getString("documento "), rs.getString("especialidad ")));
+                                    rs.getInt("edad"), rs.getString("documento"), rs.getString("especialidad")));
 
                             }
                         }

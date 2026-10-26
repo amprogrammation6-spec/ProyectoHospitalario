@@ -25,8 +25,7 @@ public class EnfermeraRepositorio {
     public void guardar(Enfermera e) throws SQLException{
         String sql = """
                 INSERT INTO enfermeras (id, nombre, edad, documento) VALUES (?, ?, ?, ?)
-                ON DUPLICATE KEY UPDATE nombre=VALUES(nombre), edad=VALUES(edad), documento=VALUES(documento),
-                       especialidad=VALUES(especialidad)
+                ON DUPLICATE KEY UPDATE nombre=VALUES(nombre), edad=VALUES(edad), documento=VALUES(documento)
                 """;
 
 
