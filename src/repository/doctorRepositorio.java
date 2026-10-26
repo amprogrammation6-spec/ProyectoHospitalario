@@ -8,7 +8,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import model.Doctor;
-import model.Paciente;
 import util.conexionBD;
 
 public class doctorRepositorio {

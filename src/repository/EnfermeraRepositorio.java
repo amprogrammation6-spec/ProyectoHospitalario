@@ -7,9 +7,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import model.Doctor;
 import model.Enfermera;
-import model.Paciente;
 import util.conexionBD;
 
 public class EnfermeraRepositorio {

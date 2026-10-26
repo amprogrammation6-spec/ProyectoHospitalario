@@ -36,8 +36,8 @@ public class CitaRepositorio {
                 try(Connection c = conexionBD.obtenerConexion();
                     PreparedStatement ps = c.prepareStatement(sql)){
                         ps.setInt(1, cita.id);
-                        ps.setInt(2, cita.paciente_id);
-                        ps.setInt(3, cita.doctor_id);
+                        ps.setInt(2, cita.pacienteId);
+                        ps.setInt(3, cita.doctorId);
                         ps.setString(4, cita.fecha);
                         ps.setString(5, cita.hora);
                         ps.setString(6, cita.estado);

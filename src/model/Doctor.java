@@ -2,11 +2,11 @@ package model;
 
 public class Doctor {
 
-    int id;
-    String nombre;
-    int edad;
-    String documento;
-    String especialidad;
+    public int id;
+    public String nombre;
+    public int edad;
+    public String documento;
+    public String especialidad;
 
 
     public Doctor(int id, String nombre, int edad, String documento, String especialidad) {
@@ -17,7 +17,7 @@ public class Doctor {
         this.especialidad = especialidad;
     }
 
-    public void  mostrarinformacion() {
+    public void  mostrarInformacion() {
         System.out.println("["+ id +" ] "+nombre+" | "+especialidad+" | Edad:"+edad+" |  Documento: "+documento );
     }
     

@@ -2,10 +2,10 @@ package model;
 
 public class Enfermera {
 
-    int id;
-    String nombre;
-    int edad;
-    String documento;
+    public int id;
+    public String nombre;
+    public int edad;
+    public String documento;
 
 
     public Enfermera(int id, String nombre, int edad, String documento) {

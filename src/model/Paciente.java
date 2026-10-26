@@ -2,10 +2,10 @@ package model;
 
 public class Paciente {
 
-    int id;
-    String nombre;
-    int edad;
-    String documento;
+    public int id;
+    public String nombre;
+    public int edad;
+    public String documento;
 
 
     public Paciente(int id, String nombre, int edad, String documento) {
@@ -16,7 +16,7 @@ public class Paciente {
     }
 
     
-     public void  mostrarinformacion() {
+     public void  mostrarInformacion() {
         System.out.println("["+ id +" ] "+nombre+" | Edad:"+edad+" |  Documento: "+documento );
     }
 

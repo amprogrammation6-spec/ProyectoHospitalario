@@ -2,12 +2,12 @@ package model;
 
 public class Cita {
 
-    int id;
-    int pacienteId ;
-    int doctorId;
-    String fecha;
-    String hora;
-    String estado;
+    public int id;
+    public int pacienteId ;
+    public int doctorId;
+    public String fecha;
+    public String hora;
+    public String estado;
 
 
     public Cita(int id, int pacienteId, int doctorId, String fecha, String hora, String estado) {
@@ -21,11 +21,5 @@ public class Cita {
 
     public void mostrarResumen(String nombrePaciente, String nombreDoctor) {
         System.out.println("Cita #" +id+ " | " +fecha+" - "+hora+" | Paciente: "+nombrePaciente+" | Doctor: " +nombreDoctor+ " | "+estado);
-
-
-
     }
-
-
-    
 }
