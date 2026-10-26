@@ -28,7 +28,7 @@ public final class conexionBD {
         cargarConfiguracion();
         try{
             //carga el driver de JDBC de mysql
-            Class.forName("com,mysql.cj.jdbc.Driver");
+            Class.forName("com.mysql.cj.jdbc.Driver");
         }catch(ClassNotFoundException e){
             throw new ExceptionInInitializerError(
             "No se encontro el driver de mysql . Coloca mysql-connector-j en la carpeta lib/."+e.getMessage());

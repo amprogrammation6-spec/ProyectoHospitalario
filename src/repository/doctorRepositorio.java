@@ -21,7 +21,7 @@ public class doctorRepositorio {
       public void guardar(Doctor d) throws SQLException{
         String sql = """
                 INSERT INTO doctores (id, nombre, edad, documento, especialidad) VALUES (?, ?, ?, ?, ?)
-                ON DUPLICATE KEY UPDATE nombre=VALUES(nombre), edad=VALUES(edad), documento=VALUES(docuemnto),
+                ON DUPLICATE KEY UPDATE nombre=VALUES(nombre), edad=VALUES(edad), documento=VALUES(documento),
                        especialidad=VALUES(especialidad)
                 """;
 
@@ -45,7 +45,7 @@ public class doctorRepositorio {
         List<Doctor> lista = new ArrayList<>();
         try(Connection c = conexionBD.obtenerConexion();
                     PreparedStatement ps = c.prepareStatement(
-                        "SELECT id, nombre,edad,docuemnto, especialidad FROM pacientes ORDER BY id");
+                        "SELECT id, nombre,edad,documento, especialidad FROM pacientes ORDER BY id");
                     ResultSet rs = ps.executeQuery()){
                             //avance fila por fila 
                             while (rs.next()){
@@ -62,7 +62,7 @@ public class doctorRepositorio {
     public Doctor buscarPorId(int id) throws SQLException{
         try(Connection c = conexionBD.obtenerConexion();
                 PreparedStatement ps = c.prepareStatement(
-                        "SELECT id, nombre,edad,docuemnto,especialidad FROM doctores WHERE id=?")){
+                        "SELECT id, nombre,edad,documento,especialidad FROM doctores WHERE id=?")){
             ps.setInt( 1,id);
             try (ResultSet rs = ps.executeQuery()){
                 if(rs.next()){

@@ -8,7 +8,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import model.Cita;
-import model.Paciente;
 import util.conexionBD;
 
 public class CitaRepositorio {
@@ -42,13 +41,9 @@ public class CitaRepositorio {
                         ps.setString(5, cita.hora);
                         ps.setString(6, cita.estado);
                         ps.executeUpdate();
-
-
                     }
             
-
     }
-
 
     public List<Cita> listarTodos() throws SQLException{
         List<Cita> lista = new ArrayList<>();
@@ -87,33 +82,13 @@ public class CitaRepositorio {
 
     }
 
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
          private int maxId() throws SQLException{
     try(Connection c = conexionBD.obtenerConexion();
                 PreparedStatement ps = c.prepareStatement(
                     "SELECT COALESCE(MAX(id),0) AS m FROM citas");
                     ResultSet rs = ps.executeQuery()){
                         rs.next();
-                        return rs.getInt("m");
-        
+                        return rs.getInt("m");   
         }
-    }
-
-
-
-    
+    }    
 }
