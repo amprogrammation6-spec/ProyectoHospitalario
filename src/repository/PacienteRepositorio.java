@@ -57,7 +57,7 @@ public class PacienteRepositorio {
 
                             }
                         }
-                                return lista; 
+                        return lista; 
     }
 
     public Paciente buscarPorId(int id) throws SQLException{

@@ -7,8 +7,6 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Properties;
 
-import javax.imageio.stream.FileImageInputStream;
-
 public final class conexionBD {
 
     private static final String ARCHIVO_CONFIG = "config/database.properties";
@@ -45,8 +43,8 @@ public final class conexionBD {
         try(FileInputStream entrada = new FileInputStream(ARCHIVO_CONFIG)){
 
             propiedades.load(entrada);
-            url = propiedades.getProperty("db.url")
-            usuario = propiedades.getProperty("db.user")
+            url = propiedades.getProperty("db.url");
+            usuario = propiedades.getProperty("db.user");
             contraseña = propiedades.getProperty("db.password","");
 
 
@@ -63,6 +61,24 @@ public final class conexionBD {
     }
 
 
+    public static void cerrarConexion(Connection conexion){
+        if (conexion != null){
+            try{
+                conexion.close();
 
+            }  catch(SQLException e ){
+                System.err.println("Error al cerrar la conexion: " + e.getMessage());
+            }
 
+        }
+    }
+
+    public static boolean probarConexion(){
+        try(Connection conexion = obtenerConexion()){
+            return conexion != null && !conexion.isClosed();
+        } catch (SQLException e) {
+            System.err.println("No se pudo coectar a MySQL: " + e.getMessage());
+            return false;
+        }
+    }
 }
